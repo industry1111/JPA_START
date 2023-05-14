@@ -38,7 +38,6 @@ public class JpaMain {
 //            Query query = em.createQuery("select m from oldMember m", oldMember.class); //flush자동호출
             //커밋이 되기전까지 영속성컨텍스트 내부의 SQL저장소에 객체의 변경상태를 감지한 후  sql생성후 커밋 시 flush
 
-
             //저장
             Team team = new Team();
             team.setName("TEAMA");
@@ -46,7 +45,7 @@ public class JpaMain {
 
             oldMember oldMember1 = new oldMember();
             oldMember1.setUsername("MEMBER1");
-            oldMember1.setTeam(team);
+            oldMember1.changeTeam(team);
             em.persist(oldMember1);
 
             em.flush();

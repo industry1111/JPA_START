@@ -38,19 +38,20 @@ public class oldMember {
     @Column(name = "name" )
     private String username;
 
-//    @Column(name = "TEAM_ID")
-//    private Long teamId;
-
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "TEAM_ID")
     private Team team;
 
+    @OneToOne
+    @JoinColumn(name = "LOCKER_ID")
+    private Locker locker;
     public Team getTeam() {
         return team;
     }
 
-    public void setTeam(Team team) {
+    public void changeTeam(Team team) {
         this.team = team;
+        team.getMembers().add(this);
     }
 
     public Long getId() {
@@ -67,5 +68,15 @@ public class oldMember {
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    @Override
+    public String toString() {
+        return "oldMember{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", team=" + team.getId() +
+                ", teamName=" + team.getName() +
+                '}';
     }
 }

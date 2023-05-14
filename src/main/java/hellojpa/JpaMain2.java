@@ -24,11 +24,9 @@ public class JpaMain2 {
 
             oldMember oldMember1 = new oldMember();
             oldMember1.setUsername("MEMBER1");
-            oldMember1.setTeam(team);
+            oldMember1.changeTeam(team);
 
             em.persist(oldMember1);
-
-            team.getMembers().add(oldMember1); //양방향 연관관계 시 양쪽에 모두 다 값 설정
 
 //            em.flush();
 //            em.clear();

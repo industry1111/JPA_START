@@ -1,6 +1,7 @@
 package jpabook.jpashop;
 
 import jpabook.jpashop.domain.Order;
+import jpabook.jpashop.domain.OrderItem;
 
 import javax.persistence.*;
 import java.util.List;
@@ -17,6 +18,8 @@ public class JpaMain {
 
         try {
 
+            Order order = new Order();
+            order.addOrderItem(new OrderItem());
 
         } catch (Exception e) {
             tx.rollback();
