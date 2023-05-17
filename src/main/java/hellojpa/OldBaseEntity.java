@@ -1,6 +1,5 @@
 package hellojpa;
 
-import javax.persistence.Entity;
 import javax.persistence.MappedSuperclass;
 import java.time.LocalDateTime;
 
@@ -11,7 +10,7 @@ import java.time.LocalDateTime;
 * JPA에서 상속이 가능한 경우는 부모 클래스가 @Entity 또는 @MappedSuperclass 어노테이션이 있어야 가능.
 * */
 @MappedSuperclass
-public abstract class BaseEntity {
+public abstract class OldBaseEntity {
 
     private String createdBy;
     private LocalDateTime createdDate;

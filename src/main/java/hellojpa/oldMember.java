@@ -2,13 +2,12 @@ package hellojpa;
 
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
 
 @Entity
 //@Table ( name = "aaa" )
 //name defautl 값은 클래스 명  ( name = "Member" )
 //@SequenceGenerator( name ="MEMBER_SEQ_GENERATOR", sequenceName = "MEMBER_SEQ")
-public class oldMember extends BaseEntity{
+public class oldMember extends OldBaseEntity {
 
     /*
         @Id :PK 직접할당

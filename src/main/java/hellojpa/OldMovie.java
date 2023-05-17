@@ -3,7 +3,7 @@ package hellojpa;
 import javax.persistence.Entity;
 
 @Entity
-public class Movie extends OldItem {
+public class OldMovie extends OldItem {
 
     private String director;
     private String actor;

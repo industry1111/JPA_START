@@ -1,9 +1,9 @@
-package hellojpa;
+package jpabook.jpashop.domain;
 
 import javax.persistence.Entity;
 
 @Entity
-public class Book extends OldItem{
+public class Book extends Item{
 
     private String author;
     private String isbn;
