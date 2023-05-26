@@ -28,21 +28,24 @@ public class JpaMain2 {
 
             em.persist(oldMember1);
 
-//            em.flush();
-//            em.clear();
+            em.flush();
+            em.clear();
 
-            oldMember findMember = em.find(oldMember.class,oldMember1.getId());
+//            oldMember findMember = em.find(oldMember.class,oldMember1.getId());
+            oldMember findMember = em.getReference(oldMember.class, oldMember1.getId());
+            System.out.println("findMember :" + findMember.getClass()); //findMember :class hellojpa.oldMember$HibernateProxy$0wxNer8b 하이버네이트에서 임의로 만든 클래스란걸 확인 가능
+            System.out.println("findMember Username : " + findMember.getUsername());
 
-            List<oldMember> members = findMember.getTeam().getMembers();
-            for (oldMember member : members) {
-                System.out.println("member : " +member.getUsername());
-            }
 
-            Team findTeam = em.find(Team.class, 1L);
-            List<oldMember> members1 = findTeam.getMembers();
-            for (oldMember member : members1) {
-                System.out.println("member1 : " + member.getUsername());
-            }
+//            List<oldMember> members = findMember.getTeam().getMembers();
+//            for (oldMember member : members) {
+//                System.out.println("member : " +member.getUsername());
+//            }
+//            Team findTeam = em.find(Team.class, 1L);
+//            List<oldMember> members1 = findTeam.getMembers();
+//            for (oldMember member : members1) {
+//                System.out.println("member1 : " + member.getUsername());
+//            }
 
             tx.commit();
         } catch (Exception e) {
