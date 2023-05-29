@@ -17,14 +17,14 @@ public class MappedSuperMain {
 
         try {
 
-            oldMember member = new oldMember();
+            oldmember member = new oldmember();
             member.setUsername("맵슈퍼클래스");
             member.setCreatedBy("Ko");
             member.setCreatedDate(LocalDateTime.now());
 
             em.persist(member);
 
-            oldMember findMember = em.find(oldMember.class, member.getId());
+            oldmember findMember = em.find(oldmember.class, member.getId());
             System.out.println("find Member Id : " + findMember.getId() + "createdBy : " + findMember.getCreatedBy() + "createdDate : " + findMember.getCreatedDate());
 
             tx.commit();

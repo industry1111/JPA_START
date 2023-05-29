@@ -1,10 +1,10 @@
 package jpabook.jpashop;
 
-import jpabook.jpashop.domain.Book;
-import jpabook.jpashop.domain.Order;
-import jpabook.jpashop.domain.OrderItem;
+import jpabook.jpashop.domain.Member;
 
 import javax.persistence.*;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
 import java.util.List;
 
 public class JpaMain {
@@ -19,12 +19,8 @@ public class JpaMain {
 
         try {
 
-            Book book = new Book();
-            book.setName("7년");
-            book.setAuthor("기욤뮈소");
-
-            em.persist(book);
-
+            List<Member> resultList = em.createQuery("select m from Member m where m.name like '%kim'", Member.class).getResultList();
+            List<Member> resultList2 = em.createNativeQuery("select member_id, city, street, zipcode, name from member", Member.class).getResultList();
 
             tx.commit();
 

@@ -4,7 +4,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
-import java.util.List;
 
 public class JpaMain2 {
 
@@ -22,7 +21,7 @@ public class JpaMain2 {
             team.setName("TEAMA");
             em.persist(team);
 
-            oldMember oldMember1 = new oldMember();
+            oldmember oldMember1 = new oldmember();
             oldMember1.setUsername("MEMBER1");
             oldMember1.changeTeam(team);
 
@@ -32,7 +31,7 @@ public class JpaMain2 {
             em.clear();
 
 //            oldMember findMember = em.find(oldMember.class,oldMember1.getId());
-            oldMember findMember = em.getReference(oldMember.class, oldMember1.getId());
+            oldmember findMember = em.getReference(oldmember.class, oldMember1.getId());
             System.out.println("findMember :" + findMember.getClass()); //findMember :class hellojpa.oldMember$HibernateProxy$0wxNer8b 하이버네이트에서 임의로 만든 클래스란걸 확인 가능
             System.out.println("findMember Username : " + findMember.getUsername());
 

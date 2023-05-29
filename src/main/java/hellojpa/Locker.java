@@ -14,5 +14,5 @@ public class Locker {
     private String name;
 
     @OneToOne(mappedBy = "locker")
-    private oldMember member;
+    private oldmember member;
 }

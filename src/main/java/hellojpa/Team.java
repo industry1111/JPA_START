@@ -14,9 +14,9 @@ public class Team extends OldBaseEntity {
     private String name;
 
     @OneToMany(mappedBy = "team") // 어느 변수와 맵핑되어있는지
-    private List<oldMember> members = new ArrayList<>();
+    private List<oldmember> members = new ArrayList<>();
 
-    public List<oldMember> getMembers() {
+    public List<oldmember> getMembers() {
         return members;
     }
 

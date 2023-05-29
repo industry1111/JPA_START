@@ -43,7 +43,7 @@ public class JpaMain {
             team.setName("TEAMA");
             em.persist(team);
 
-            oldMember oldMember1 = new oldMember();
+            oldmember oldMember1 = new oldmember();
             oldMember1.setUsername("MEMBER1");
             oldMember1.changeTeam(team);
             em.persist(oldMember1);
@@ -51,7 +51,7 @@ public class JpaMain {
             em.flush();
             em.clear();
 
-            oldMember findMember = em.find(oldMember.class,oldMember1.getId());
+            oldmember findMember = em.find(oldmember.class,oldMember1.getId());
 
             Team findTeam = findMember.getTeam();
             System.out.println("find Team : " + findTeam.getName());
